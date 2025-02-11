@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: rgb(51, 51, 51);
+        }
+        header {
+            background: rgb(185, 68, 2);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        h1, h2 {
+            color: rgb(248, 176, 62);
+        }
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        .portfolio-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .portfolio-images .portfolio-item {
+            flex: 1 1 calc(33.33% - 1rem);
+            max-width: calc(33.33% - 1rem);
+            box-sizing: border-box;
+        }
+        .portfolio-images img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .more-info {
+            display: none;
+            margin-top: 10px;
+            padding: 1rem;
+            background-color: #444;
+            border-radius: 8px;
+        }
+        .more-info a {
+            color: rgb(248, 176, 62);
+        }
+        #info1:target {
+            display: block;
+        }
+        a {
+            color: rgb(248, 176, 62);
+            text-decoration: none;
+        }
+        a:hover {
+            color: rgb(185, 68, 2);
+        }
+
+        .formation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .formation-text {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .formation-image {
+            flex: 1;
+            max-width: 50%;
+            overflow: hidden;
+        }
+        .formation-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mon Portfolio</h1>
+        <p>Découvrez mes compétences, réalisations et objectifs professionnels</p>
+    </header>
+
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#competences">Compétences</a>
+        <a href="#cv">CV</a>
+        <a href="#echantillons">Échantillons</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <h3>Page Titre</h3>
+        <p>Bienvenue sur mon portfolio en ligne ! Ce site a pour objectif de vous présenter 
+            mes compétences, mes réalisations et mes objectifs professionnels. À travers ce portfolio, 
+            vous découvrirez qui je suis et mes ambitions.</p>
+
+        <h3>Introduction</h3>
+        <p>Ce portfolio résume mon parcours académique, mes projets réalisés, ainsi que mes compétences dans différents 
+            domaines tels que la programmation, le développement web, et bien d'autres. 
+            Mon but est de vous donner un aperçu de mon potentiel et de mes réalisations jusqu'à présent.</p>
+
+        <h3>Objectif Professionnel</h3>
+        <p>Je suis actuellement en études supérieures possiblement à la recherche d'une alternance lors de ma deuxième année.     
+        </p>
+
+        <h3>Énoncé de Mission Personnel</h3>
+        <p>Je suis une personne passionnée par la technologie et l'innovation. Je travaille avec rigueur, 
+            créativité et toujours avec pleins de curiosité pour apprendre. J'aime relever des défis,
+             trouver des solutions aux problèmes complexes.</p>
+    </section>
+
+    <section id="competences">
+        <h2>Profil de Compétences</h2>
+        <ul>
+            <li><strong>Compétences techniques :</strong> maîtrise de Python, HTML, CSS, SQL</li>
+            <p>J'ai appris ces nombreux languages par de nombreux projets diverses et variés, par la création de base de données pour SQL, de jeu et d'expérience 
+                pour Python et de création de page web pour HTML et CSS y compris celle-ci. </p>
+            <li><strong>Compétences organisationnelles :</strong> En relation avec un groupe de travail dans le cadre d'une médiation culturelle et numérique en partenariat avec l'UNESCO</li>
+            <p>Ce projet en groupe implique la création d'un site internet qui propose la visite de monuments et de lieux à Kyoto</p>
+        </ul>
+    </section>
+
+    <section id="cv">
+        <h2>Curriculum Vitae</h2>
+        <p>Téléchargez mon CV <strong>(Pas terminé)</strong> ici : <a href="CV.odt" download>Mon CV</a></p>
+        <h3>Expériences Professionnelles</h3>
+        <ul>
+            <li>Pas d'expériences professionnelles en entreprises, Aucun stage réalisé</li>
+        </ul>
+        <h3>Formation</h3>
+        <div class="formation">
+            <div class="formation-text">
+                <ul>
+                    <li>BUT Informatique, Institut Universitaire et Technologique de Champs sur Marne, 2024-2025</li>
+                    <p>Pour des informations complémentaires sur : <a href="https://iut.univ-gustave-eiffel.fr/organisation-1/informatique" target="_blank">l'IUT</a> </p>
+                </ul>
+            </div>
+            <div class="formation-image">
+                <img src="https://but-mmi-champs.fr/img/index/iut.jpg" alt="Institut Universitaire et Technologique de Champs sur Marne">
+            </div>
+        </div>
+    </section>
+
+    <section id="echantillons">
+        <h2>Échantillons de Travail</h2>
+        <div class="portfolio-images">
+            <div class="portfolio-item">
+                <img src="image_portfolio.PNG" alt="Projet 1">
+                <p>Projet 1 : Réalisation du jeu Tetris en Python</p>
+                <a href="#info1" class="more-info-link">En savoir plus</a>
+                <div id="info1" class="more-info">
+                    <p>Ce projet a été réalisé en binôme, en utilisant le module graphique FLTK en Python. 
+                    Le jeu Tetris a été programmé à l'aide de cette bibliothèque pour gérer l'interface graphique et les interactions de jeu.
+                    Le jeu à été reproduit dans son intégralité ainsi que l'ajout de variantes du jeu original</p>
+                    <p>Vous pouvez télécharger FLTK ici : <a href="https://www.fltk.org/" target="_blank">Télécharger FLTK</a></p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="image_portfolio2.PNG" alt="Projet 2">
+                <p>Projet 2 : Création d'un site en groupe sur Kyoto</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Vous pouvez me contacter par mail à l'adresse suivante : <a href="mailto:dumur.seb@gmail.com">dumur.seb@gmail.com</a></p>
+        <p>Suivez-moi sur :
+            <a href="https://www.linkedin.com/in/s%C3%A9bastien-dumur-ab3011339/" target="_blank">LinkedIn</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>Portfolio réalisé par Sébastien DUMUR</p>
+    </footer>
+</body>
+</html>
