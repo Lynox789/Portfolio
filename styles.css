@@ -1,0 +1,908 @@
+/* #> sert à différencier des commentaires classiques des sections de code */
+/* #> styles globaux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f3e9;
+    color: #313131;
+    line-height: 1.6;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1,
+h3,
+h4 {
+    color: #34495e;
+    font-weight: bold;
+}
+
+a {
+    color: #d35400;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* #>header & nav*/
+
+header {
+    background: #4a6fa5;
+    color: white;
+    padding: 2rem 1rem 3rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+/* La navbar qui suit le défilement */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #2c3e50;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    color: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* #> Titres sections */
+section {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    padding: 0 1rem;
+}
+
+section h2 {
+    color: #fff;
+    background-color: #d79257;
+    /* Couleur orange d'accentuation */
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2.5rem;
+    border-bottom: 4px solid #d35400;
+}
+
+/* #> grid layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.grid-block {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.grid-block:hover {
+    transform: translateY(-5px);
+}
+
+.grid-block h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 10px;
+}
+
+/* Le bloc qui prend toute la hauteur sur la droite */
+.grid-tall {
+    grid-row: span 2;
+    background-color: #34495e;
+    color: #ecf0f1;
+    justify-content: flex-start;
+    /* Aligne le contenu tout en haut */
+}
+
+.grid-tall h3 {
+    color: #e67e22;
+    border-bottom-color: #4a6fa5;
+}
+
+/* Le bloc qui prend toute la largeur */
+.grid-wide {
+    grid-column: span 2;
+}
+
+/* #> section introduction */
+.intro-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #e67e22;
+    /* Bordure orange pour rappeler le thème */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    /* Empêche la photo de s'écraser */
+}
+
+/* #> Objectif de carrière */
+
+.goals-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.goal-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.goal-item .icon-placeholder {
+    font-size: 2rem;
+    color: #d35400;
+    background: rgba(211, 84, 0, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.goal-text h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #34495e;
+}
+
+.goal-text p {
+    margin: 5px 0 0 0;
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+a.carte-comp-but {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    /* Assure que le flexbox continue de fonctionner */
+}
+
+/* #> Parcours académiques */
+.academic-structure {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.academic-item {
+    flex: 1;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.formation-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.academic-item:hover .formation-image {
+    transform: scale(1.05);
+}
+
+.academic-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.academic-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+.academic-info p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.academic-info .specialties {
+    font-weight: bold;
+    color: #d35400;
+    margin-top: 5px;
+}
+
+.formation-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #4a6fa5;
+}
+
+/* #> section compétences */
+.competences-but-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colonnes par défaut */
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.carte-comp-but {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carte-comp-but:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.carte-comp-but .icon-placeholder {
+    width: 100%;
+    height: 150px;
+    /* Hauteur fixe pour faire un rectangle régulier */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    background: transparent;
+    border-radius: 8px;
+}
+
+.carte-comp-but .icon-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Remplit tout le rectangle proprement */
+    border-radius: 8px;
+    border: 1px solid #ecf0f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre pour faire ressortir la capture d'écran */
+}
+
+.comp-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.project-info {
+    text-align: left;
+    width: 100%;
+}
+
+.project-name {
+    font-weight: bold;
+    margin: 0;
+    color: #34495e;
+}
+
+.project-desc {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.icon-placeholder.blue,
+.comp-title.blue {
+    color: #3498db;
+}
+
+.icon-placeholder.orange,
+.comp-title.orange {
+    color: #e67e22;
+}
+
+.icon-placeholder.grey,
+.comp-title.grey {
+    color: #7f8c8d;
+}
+
+.icon-placeholder.purple,
+.comp-title.purple {
+    color: #9b59b6;
+}
+
+.icon-placeholder.green,
+.comp-title.green {
+    color: #2ecc71;
+}
+
+.icon-placeholder.yellow,
+.comp-title.yellow {
+    color: #f1c40f;
+}
+
+/* #> section connaissances techniques */
+.tech-section-block {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2.5rem;
+    text-align: left;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tech-section-block h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 10px;
+}
+
+/* #> conteneur carte techniques */
+.tech-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* Espacement légèrement réduit */
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.tech-card {
+    background-color: #f8f9fa;
+    border: 2px solid #ecf0f1;
+    border-radius: 12px;
+    width: 110px;
+    /* Réduit pour rentrer côte à côte dans la grille */
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    border-color: #e67e22;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tech-card img {
+    width: 55px;
+    /* Ajustement de taille */
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.tech-title {
+    color: #2c3e50;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .tech-card {
+        width: 100px;
+        padding: 0.8rem 0.5rem;
+    }
+}
+
+/* #> section etudes actuelles */
+.etudes-actuelles {
+    margin-bottom: auto;
+    /* Pousse automatiquement le champs "Ma Vision" vers le bas */
+}
+
+.etudes-actuelles h3 {
+    margin-bottom: 1rem;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.ra-desc {
+    font-size: 0.85rem;
+    color: #ecf0f1;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+/* Ajustement responsif */
+@media (max-width: 768px) {
+    .stats-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+/* #> Pages compétences */
+
+.competence-wrapper {
+    background-color: #f4f7fb;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.comp-title-main {
+    color: #1a5276;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.comp-subtitle {
+    color: #2980b9;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    margin-top: 0;
+}
+
+.comp-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.comp-card {
+    background: #eaf0f8;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    border: 1px solid #d5e1ee;
+    text-align: left;
+}
+
+.comp-card.full-width {
+    grid-column: span 2;
+}
+
+.comp-card h3 {
+    color: #1a5276;
+    margin-top: 0;
+    border-bottom: 2px solid #d5e1ee;
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.comp-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.comp-card li {
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+/* #> section preuves de travail */
+.preuves-container {
+    margin-top: 3rem;
+}
+
+.preuves-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.preuve-card {
+    background: #eaf0f8;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 320px;
+    text-align: center;
+    border: 1px solid #d5e1ee;
+    display: flex;
+    flex-direction: column;
+}
+
+.preuve-card img.thumbnail {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #bdc3c7;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.preuve-card img.thumbnail:hover {
+    transform: scale(1.03);
+}
+
+.preuve-card h4 {
+    color: #1a5276;
+    margin: 15px 0 10px 0;
+}
+
+.preuve-card p {
+    font-size: 0.9rem;
+    color: #34495e;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    /* Pousse le bouton vers le bas */
+}
+
+.btn-galerie {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #4a6fa5;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: background 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-galerie:hover {
+    background: #2c3e50;
+    color: white;
+}
+
+/* #> Galerie d'image */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    z-index: 10000;
+    overflow: hidden;
+    /* Empêche le scroll de la page derrière */
+    touch-action: none;
+    /* Désactive les gestes du navigateur pour le swipe */
+    cursor: grab;
+    /* Indique qu'on peut glisser */
+}
+
+/* Conteneur qui glisse */
+.gallery-track {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+/* Chaque slide d'image */
+.gallery-slide {
+    flex: 0 0 100%;
+    /* Chaque image prend 100% de la largeur */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.gallery-slide img {
+    max-width: 100%;
+    max-height: 90vh;
+    /* Laisse un peu de place pour le compteur */
+    object-fit: contain;
+    border-radius: 4px;
+    user-select: none;
+    /* Empêche la sélection de l'image pendant le drag */
+    -webkit-user-drag: none;
+}
+
+/* Compteur minimaliste en bas */
+.gallery-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    pointer-events: none;
+    /* Ne gêne pas le swipe */
+}
+
+/* Bouton fermer minimaliste en haut à droite */
+.gallery-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    z-index: 10001;
+    /* Au-dessus des images */
+}
+
+.gallery-close:hover {
+    background: rgba(231, 76, 60, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .competence-wrapper {
+        padding: 2rem 1rem;
+    }
+
+    .comp-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .comp-card.full-width {
+        grid-column: span 1;
+    }
+
+    .preuve-card {
+        width: 100%;
+    }
+
+    .comp-title-main {
+        font-size: 1.8rem;
+    }
+
+    .gallery-close {
+        display: none;
+    }
+}
+
+/* #> projet et description */
+.projet-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    align-items: stretch;
+}
+
+.projet-row .preuve-card {
+    flex: 1;
+    width: auto;
+    margin-bottom: 0;
+}
+
+.description-card {
+    flex: 1;
+    background: #eaf0f8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #d5e1ee;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-card h4 {
+    color: #1a5276;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d5e1ee;
+    padding-bottom: 10px;
+}
+
+.description-card p {
+    font-size: 0.95rem;
+    color: #34495e;
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    .projet-row {
+        flex-direction: column;
+    }
+}
+
+
+/* #> footer */
+footer {
+    background-color: #34495e;
+    color: white;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-container h3 {
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+        /* Tout passe sur 1 colonne */
+    }
+
+    .grid-tall {
+        grid-row: span 1;
+    }
+
+    .grid-wide {
+        grid-column: span 1;
+    }
+
+    .intro-block {
+        flex-direction: column-reverse;
+        /* Met la photo au-dessus du texte */
+        text-align: center;
+    }
+
+    .goals-container {
+        flex-direction: column;
+    }
+
+    .goal-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .academic-structure {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .competences-but-grid {
+        grid-template-columns: 1fr;
+        /* Tout passe sur 1 colonne */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -3,209 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: white;
-            background-color: rgb(51, 51, 51);
-        }
-        header {
-            background: rgb(185, 68, 2);
-            color: white;
-            padding: 1.5rem 0;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            margin-top: 1rem;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-        section {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1rem;
-            border-bottom: 1px solid #ddd;
-        }
-        h1, h2 {
-            color: rgb(248, 176, 62);
-        }
-        footer {
-            text-align: center;
-            background: #333;
-            color: white;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-        .portfolio-images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-        .portfolio-images .portfolio-item {
-            flex: 1 1 calc(33.33% - 1rem);
-            max-width: calc(33.33% - 1rem);
-            box-sizing: border-box;
-        }
-        .portfolio-images img {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-        .more-info {
-            display: none;
-            margin-top: 10px;
-            padding: 1rem;
-            background-color: #444;
-            border-radius: 8px;
-        }
-        .more-info a {
-            color: rgb(248, 176, 62);
-        }
-        #info1:target {
-            display: block;
-        }
-        a {
-            color: rgb(248, 176, 62);
-            text-decoration: none;
-        }
-        a:hover {
-            color: rgb(185, 68, 2);
-        }
-
-        .formation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .formation-text {
-            flex: 1;
-            margin-right: 20px;
-        }
-        .formation-image {
-            flex: 1;
-            max-width: 50%;
-            overflow: hidden;
-        }
-        .formation-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-    </style>
+    <title>Mon Portfolio | Sébastien DUMUR</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Mon Portfolio</h1>
-        <p>Découvrez mes compétences, réalisations et objectifs professionnels</p>
-    </header>
-
     <nav>
+        <a href="index.html">Accueil</a>
         <a href="#introduction">Introduction</a>
-        <a href="#competences">Compétences</a>
-        <a href="#cv">CV</a>
-        <a href="#echantillons">Échantillons</a>
-        <a href="#contact">Contact</a>
+        <a href="competences.html">Compétences</a>
+        <a href="#connaissances">Connaissances techniques</a>
+        <a href="#cv-contact">CV & Contact</a>
     </nav>
 
-    <section id="introduction">
-        <h2>Introduction</h2>
-        <h3>Page Titre</h3>
-        <p>Bienvenue sur mon portfolio en ligne ! Ce site a pour objectif de vous présenter 
-            mes compétences, mes réalisations et mes objectifs professionnels. À travers ce portfolio, 
-            vous découvrirez qui je suis et mes ambitions.</p>
+    <main>
+        <section id="introduction">
+            <h2>À propos de moi</h2>
+            
+            <div class="grid-layout">
+                <div class="grid-block grid-wide intro-block">
+                    <div class="intro-text">
+                        <h3>Bienvenue sur mon site</h3>
+                        <p>Je m'appelle Sébastien DUMUR, étudiant en BUT Informatique et passionné par le développement web. Vous découvrirez ici mon parcours et mes projets.</p>
+                        <p>Je suis actuellement à la recherche d'un stage en développement en région parisienne.</p>
+                    </div>
+                    <img src="Image/pfp.jpg" alt="photo de profil" class="profile-pic">
+                </div>
 
-        <h3>Introduction</h3>
-        <p>Ce portfolio résume mon parcours académique, mes projets réalisés, ainsi que mes compétences dans différents 
-            domaines tels que la programmation, le développement web, et bien d'autres. 
-            Mon but est de vous donner un aperçu de mon potentiel et de mes réalisations jusqu'à présent.</p>
+                <div class="grid-block">
+                    <h3>Mon Profil</h3>
+                    <p>Animé par une véritable passion pour l'apprentissage et les nouvelles technologies, je consolide mes acquis en développement, bases de données et réseaux. Au-delà de la technique, je suis une personne sociable, très adaptable et guidée par une forte détermination.</p>
+                    <p>J'aime le travail en équipe et je m'efforce de toujours fournir le meilleur de moi-même, avec rigueur et bienveillance. Je suis aujourd'hui très enthousiaste à l'idée d'apporter mon dynamisme à un environnement professionnel et de transformer mes connaissances théoriques en réalisations concrètes.</p>
+                </div>
 
-        <h3>Objectif Professionnel</h3>
-        <p>Je suis actuellement en études supérieures possiblement à la recherche d'une alternance lors de ma deuxième année.     
-        </p>
+                <div class="grid-block grid-tall">
+                    <div class="etudes-actuelles">
+                        <h3>Études actuelles</h3>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <span class="stat-value">2<sup style="font-size: 0.6em;">ème</sup></span>
+                                <span class="stat-label">ANNÉE BUT</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">COMPÉTENCES</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">RA</span>
+                                <span class="stat-label">PARCOURS</span>
+                            </div>
+                        </div>
+                        <p class="ra-desc">J'ai choisi de me spécialiser dans le parcours Réalisation d'applications, qui forme au cycle de vie complet d'un logiciel. De l'analyse des besoins à la mise en production, cette spécialité m'a permis de développer une solide expertise dans la conception, le codage et les tests d'applications (web, mobiles et logiciels).</p>
+                    </div>
 
-        <h3>Énoncé de Mission Personnel</h3>
-        <p>Je suis une personne passionnée par la technologie et l'innovation. Je travaille avec rigueur, 
-            créativité et toujours avec pleins de curiosité pour apprendre. J'aime relever des défis,
-             trouver des solutions aux problèmes complexes.</p>
-    </section>
+                    <div class="vision-text">
+                        <h3>Ma vision & Engagement</h3>
+                        <p>À travers ce site, vous découvrirez un aperçu de mes compétences techniques et organisationnelles. Mon ambition est de contribuer à des projets innovants et de continuer à me perfectionner.</p>
+                    </div>
+                </div>
 
-    <section id="competences">
-        <h2>Profil de Compétences</h2>
-        <ul>
-            <li><strong>Compétences techniques :</strong> maîtrise de Python, HTML, CSS, SQL</li>
-            <p>J'ai appris ces nombreux languages par de nombreux projets diverses et variés, par la création de base de données pour SQL, de jeu et d'expérience 
-                pour Python et de création de page web pour HTML et CSS y compris celle-ci. </p>
-            <li><strong>Compétences organisationnelles :</strong> En relation avec un groupe de travail dans le cadre d'une médiation culturelle et numérique en partenariat avec l'UNESCO</li>
-            <p>Ce projet en groupe implique la création d'un site internet qui propose la visite de monuments et de lieux à Kyoto</p>
-        </ul>
-    </section>
+                <div class="grid-block goals-container">
+                    <h3>Objectifs de carrière</h3>
+                    <div class="goal-item short-term">
+                        <div class="icon-placeholder">✓</div> 
+                        <div class="goal-text">
+                            <h4>À court terme</h4>
+                            <p>Intégrer une entreprise dynamique en contrat d'apprentissage pour mettre à profit ma formation, développer mes compétences techniques et m'investir concrètement dans des projets informatiques tout en accumulant de l'expérience professionnel.</p>
+                        </div>
+                    </div>
+                    <div class="goal-item long-term">
+                        <div class="icon-placeholder">🚀</div> 
+                        <div class="goal-text">
+                            <h4>À long terme</h4>
+                            <p>Poursuivre mes études vers une école d'ingénieur en Informatique pour me spécialiser et, à l'horizon de cinq ans, piloter ou contribuer activement à des projets professionnels en entreprise.</p>
+                        </div>
+                    </div>
+                </div>
 
-    <section id="cv">
-        <h2>Curriculum Vitae</h2>
-        <p>Téléchargez mon CV <strong>(Pas terminé)</strong> ici : <a href="CV.odt" download>Mon CV</a></p>
-        <h3>Expériences Professionnelles</h3>
-        <ul>
-            <li>Pas d'expériences professionnelles en entreprises, Aucun stage réalisé</li>
-        </ul>
-        <h3>Formation</h3>
-        <div class="formation">
-            <div class="formation-text">
-                <ul>
-                    <li>BUT Informatique, Institut Universitaire et Technologique de Champs sur Marne, 2024-2025</li>
-                    <p>Pour des informations complémentaires sur : <a href="https://iut.univ-gustave-eiffel.fr/organisation-1/informatique" target="_blank">l'IUT</a> </p>
-                </ul>
-            </div>
-            <div class="formation-image">
-                <img src="https://but-mmi-champs.fr/img/index/iut.jpg" alt="Institut Universitaire et Technologique de Champs sur Marne">
-            </div>
-        </div>
-    </section>
-
-    <section id="echantillons">
-        <h2>Échantillons de Travail</h2>
-        <div class="portfolio-images">
-            <div class="portfolio-item">
-                <img src="image_portfolio.PNG" alt="Projet 1">
-                <p>Projet 1 : Réalisation du jeu Tetris en Python</p>
-                <a href="#info1" class="more-info-link">En savoir plus</a>
-                <div id="info1" class="more-info">
-                    <p>Ce projet a été réalisé en binôme, en utilisant le module graphique FLTK en Python. 
-                    Le jeu Tetris a été programmé à l'aide de cette bibliothèque pour gérer l'interface graphique et les interactions de jeu.
-                    Le jeu à été reproduit dans son intégralité ainsi que l'ajout de variantes du jeu original</p>
-                    <p>Vous pouvez télécharger FLTK ici : <a href="https://www.fltk.org/" target="_blank">Télécharger FLTK</a></p>
+                <div class="grid-block grid-wide">
+                    <h3>Parcours Académique</h3>
+                    <div class="academic-structure">
+                        <div class="academic-item lycée">
+                            <div class="img-wrapper">
+                                <img src="Image/image_lycee.jpg" alt="Lycée Emilie du Châtelet" class="formation-image">
+                            </div>
+                            <div class="academic-info">
+                                <h4>Lycée général</h4>
+                                <p>Emilie du Châtelet (77700 Serris)</p>
+                                <p class="specialties">Spécialités Mathématiques et NSI</p>
+                            </div>
+                        </div>
+                        <div class="academic-item but">
+                            <div class="img-wrapper">
+                                <img src="Image/iut.jpg" alt="IUT Champs-sur-Marne" class="formation-image">
+                            </div>
+                            <div class="academic-info">
+                                <h4>BUT Informatique</h4>
+                                <p>IUT Champs-sur-Marne</p>
+                                <p class="specialties">Actuellement en première année</p>
+                                <p><a href="https://iut.univ-gustave-eiffel.fr/organisation-1/informatique" target="_blank" class="formation-link">Accéder au site de la formation</a></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <img src="image_portfolio2.PNG" alt="Projet 2">
-                <p>Projet 2 : Création d'un site en groupe sur Kyoto</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Vous pouvez me contacter par mail à l'adresse suivante : <a href="mailto:dumur.seb@gmail.com">dumur.seb@gmail.com</a></p>
-        <p>Suivez-moi sur :
-            <a href="https://www.linkedin.com/in/s%C3%A9bastien-dumur-ab3011339/" target="_blank">LinkedIn</a>
-        </p>
-    </section>
+        <section id="competences">
+            <h2>Compétences BUT & Projets</h2>
+            <div class="competences-but-grid">
+                <a href="competences.html#realiser" class="carte-comp-but">
+                    <div class="icon-placeholder blue">
+                        <img src="Image/img2brick.png" alt="Réaliser">
+                    </div> 
+                    <div class="comp-title blue">RÉALISER</div>
+                    <div class="project-info">
+                        <p class="project-name">Projet Lego</p>
+                        <p class="project-desc">Développement et élaboration d’une application.</p>
+                    </div>
+                </a>
+                <a href="competences.html#optimiser" class="carte-comp-but">
+                    <div class="icon-placeholder orange">
+                        <img src="Image/td.png" alt="Optimiser">
+                    </div> 
+                    <div class="comp-title orange">OPTIMISER</div>
+                    <div class="project-info">
+                        <p class="project-name">Cours d’optimisation & Projet à définir</p>
+                        <p class="project-desc">Amélioration des performances et efficacité algorithmique.</p>
+                    </div>
+                </a>
+                <a href="competences.html#administrer" class="carte-comp-but">
+                    <div class="icon-placeholder grey">
+                        <img src="Image/td.png" alt="Administrer">
+                    </div> 
+                    <div class="comp-title grey">ADMINISTRER</div>
+                    <div class="project-info">
+                        <p class="project-name">Dualboot & Cours de réseau</p>
+                        <p class="project-desc">Déploiement et gestion d’infrastructures.</p>
+                    </div>
+                </a>
+                <a href="competences.html#gerer" class="carte-comp-but">
+                    <div class="icon-placeholder purple">
+                        <img src="Image/facturation.png" alt="Gérer">
+                    </div> 
+                    <div class="comp-title purple">GÉRER</div>
+                    <div class="project-info">
+                        <p class="project-name">Projet Facturation</p>
+                        <p class="project-desc">Conception et gestion de données.</p>
+                    </div>
+                </a>
+                <a href="competences.html#conduire" class="carte-comp-but">
+                    <div class="icon-placeholder green">
+                        <img src="Image/banque.png" alt="Conduire">
+                    </div> 
+                    <div class="comp-title green">CONDUIRE</div>
+                    <div class="project-info">
+                        <p class="project-name">Projet Banque</p>
+                        <p class="project-desc">Pilotage et gestion des exigences d’un projet.</p>
+                    </div>
+                </a>
+                <a href="competences.html#collaborer" class="carte-comp-but">
+                    <div class="icon-placeholder yellow">
+                        <img src="Image/unesco.jpg" alt="Collaborer">
+                    </div> 
+                    <div class="comp-title yellow">COLLABORER</div>
+                    <div class="project-info">
+                        <p class="project-name">Projet UNESCO</p>
+                        <p class="project-desc">Travail en équipe et méthodes agiles.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="connaissances">
+            <h2>Connaissances techniques</h2>
+            
+            <div class="grid-layout">
+                <div class="grid-block">
+                    <h3>Langages & Technologies</h3>
+                    <div class="tech-cards-container">
+                        <div class="tech-card">
+                            <img src="Image/html5.svg" alt="HTML">
+                            <span class="tech-title">HTML</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/css.svg" alt="CSS">
+                            <span class="tech-title">CSS</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/javascript.svg" alt="JavaScript">
+                            <span class="tech-title">JS</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/php.svg" alt="PHP">
+                            <span class="tech-title">PHP</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/c.svg" alt="Langage C">
+                            <span class="tech-title">C</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/java.svg" alt="Java">
+                            <span class="tech-title">JAVA</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/python.svg" alt="Python">
+                            <span class="tech-title">PYTHON</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/nodejs.svg" alt="Node.js">
+                            <span class="tech-title">NODE.JS</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/react.svg" alt="React">
+                            <span class="tech-title">REACT</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/mysql.svg" alt="MySQL">
+                            <span class="tech-title">MYSQL</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/postgresql.svg" alt="PostgreSQL">
+                            <span class="tech-title">POSTGRESQL</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/mongodb.svg" alt="MongoDB">
+                            <span class="tech-title">MONGODB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-block">
+                    <h3>Environnements de développement (IDE)</h3>
+                    <div class="tech-cards-container">
+                        <div class="tech-card">
+                            <img src="Image/vscode.svg" alt="VS Code">
+                            <span class="tech-title">VS CODE</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/intellij.svg" alt="IntelliJ IDEA">
+                            <span class="tech-title">INTELLIJ</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/phpstorm.svg" alt="PHPStorm">
+                            <span class="tech-title">PHPSTORM</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2.5rem;">Outils & Gestion</h3>
+                    <div class="tech-cards-container">
+                        <div class="tech-card">
+                            <img src="Image/github.svg" alt="GitHub">
+                            <span class="tech-title">GITHUB</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/figma.svg" alt="Figma">
+                            <span class="tech-title">FIGMA</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="Image/notion.svg" alt="Notion">
+                            <span class="tech-title">NOTION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="cv-contact">
+            <h2>Mon Profil & Contact</h2>
+            <div class="grid-layout">
+                
+                <div class="grid-block" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <h3>Télécharger mon CV</h3>
+                    <p>Consultez mes expériences et mon parcours en détail.</p>
+                    <p><a href="PDF/CV_DUMUR_Sebastien.pdf" download style="background: #e67e22; color: white; padding: 12px 25px; border-radius: 8px; display: inline-block; margin-top: 15px;">Mon CV (PDF)</a></p>
+                </div>
+
+                <div class="grid-block" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <h3>Envoyez-moi un e-mail</h3>
+                    <p>Vous souhaitez échanger sur une opportunité d'alternance ou un projet ? N'hésitez pas à me contacter !</p>
+                    <div style="margin-top: 15px; text-align: left;">
+                        <a href="mailto:sebastien.dumur@edu.univ-eiffel.fr" style="font-size: 1.1rem; display: block; margin-bottom: 10px;">✉️ sebastien.dumur@edu.univ-eiffel.fr</a>
+                        <a href="mailto:dumur.seb@gmail.com" style="font-size: 1.1rem; display: block;">✉️ dumur.seb@gmail.com</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>Portfolio réalisé par Sébastien DUMUR</p>
+        <div class="footer-container">
+            <div>
+                <h3>Sébastien DUMUR</h3>
+                <p>Étudiant en BUT Informatique</p>
+                <p>Recherche d'alternance</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>sebastien.dumur@edu.univ-eiffel.fr</p>
+                <p>dumur.seb@gmail.com</p>
+            </div>
+            <div>
+                <h3>Informations légales</h3>
+                <p>Université Gustave Eiffel</p>
+                <p>5 boulevard Descartes, Champs-sur-Marne</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
