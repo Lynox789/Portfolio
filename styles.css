@@ -719,6 +719,15 @@ a.carte-comp-but {
     user-select: none;
     /* Empêche la sélection de l'image pendant le drag */
     -webkit-user-drag: none;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+
+.gallery-slide img.zoomed {
+    transform: scale(2.5);
+    cursor: zoom-out;
+    z-index: 10;
 }
 
 /* Compteur minimaliste en bas */
@@ -742,7 +751,7 @@ a.carte-comp-but {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(231, 76, 60, 0.9);
     color: white;
     border: none;
     width: 40px;
@@ -753,13 +762,13 @@ a.carte-comp-but {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
     z-index: 10001;
-    /* Au-dessus des images */
 }
 
 .gallery-close:hover {
-    background: rgba(231, 76, 60, 0.8);
+    background: rgba(192, 57, 43, 1);
+    transform: scale(1.1);
 }
 
 /* Responsive */
@@ -782,10 +791,6 @@ a.carte-comp-but {
 
     .comp-title-main {
         font-size: 1.8rem;
-    }
-
-    .gallery-close {
-        display: none;
     }
 }
 
@@ -904,5 +909,28 @@ footer {
     .footer-container {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+/* #> Ajustement Navbar Mobile*/
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Permet le défilement horizontal */
+        justify-content: flex-start;
+        padding: 0.8rem 1rem;
+        gap: 15px;
+        -ms-overflow-style: none;  /*Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    nav::-webkit-scrollbar {
+        display: none; /* Masque la scrollbar sur Chrome/Safari */
+    }
+    
+    nav a {
+        white-space: nowrap; /* Empêche le texte d'un lien de se couper en deux */
+        font-size: 0.85rem; /* Réduit légèrement la taille de la police */
+        padding: 5px;
     }
 }

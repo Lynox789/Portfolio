@@ -47,11 +47,11 @@
                 <div class="preuves-grid">
                     <div class="projet-row">
                         <div class="preuve-card">
-                            <img src="Image/img2brick.png" alt="Projet Lego" class="thumbnail" onclick="openGallery(['Image/img2brick.png', 'Image/img2brick_code.png', 'Image/img2brick_code2.png'])">
+                            <img src="Image/img2brick.png" alt="Projet Lego" class="thumbnail" onclick="openGallery(['Image/img2brick.png', 'Image/img2brick_code.png', 'Image/img2brick_code2.png', 'Image/Img2brick2.png', 'Image/Img2brick3.png', 'Image/Img2brick4.png', 'Image/Img2brick5.png', 'Image/Img2brickMail.png'])">
                             <h4>SAÉ : Tableau Lego</h4>
                             <p>Architecture logicielle modulaire complexe (PHP, Java, C, PostgreSQL).
                             Pour voir en détail le projet voir <a href="https://github.com/Lynox789/Img2brick_grp/">ici</a></p>
-                            <button class="btn-galerie" onclick="openGallery(['Image/img2brick.png', 'Image/img2brick_code.png', 'Image/img2brick_code2.png'])">VOIR LE PROJET</button>
+                            <button class="btn-galerie" onclick="openGallery(['Image/img2brick.png', 'Image/img2brick_code.png', 'Image/img2brick_code2.png', 'Image/Img2brick2.png', 'Image/Img2brick3.png', 'Image/Img2brick4.png', 'Image/Img2brick5.png', 'Image/Img2brickMail.png'])">VOIR LE PROJET</button>
                         </div>
                         
                         <div class="description-card">
@@ -107,10 +107,10 @@
 
                         <div class="projet-row">
                             <div class="preuve-card">
-                                <img src="Image/opti_code3.png" alt="Optimisation C" class="thumbnail" onclick="openGallery(['Image/opti_code3.png'])">
+                                <img src="Image/opti_code3.png" alt="Optimisation C" class="thumbnail" onclick="openGallery(['Image/opti_code3.png', 'Image/resultat_pavage.png', 'Image/opti_code4.png', 'Image/opti_code5.png'])">
                                 <h4>Optimisation language C</h4>
                                 <p>Optimisation sur le pavage d'une plaque de brique avec l'algorithme BFS</p>
-                                <button class="btn-galerie" onclick="openGallery(['Image/opti_code3.png'])">VOIR LE PROJET</button>
+                                <button class="btn-galerie" onclick="openGallery(['Image/opti_code3.png', 'Image/resultat_pavage.png', 'Image/opti_code4.png', 'Image/opti_code5.png'])">VOIR LE PROJET</button>
                             </div>
                             <div class="description-card">
                                 <h4>Descriptions et Notions abordées</h4>
@@ -253,11 +253,11 @@
                 <div class="preuves-grid">
                     <div class="projet-row">
                         <div class="preuve-card">
-                            <img src="Image/banque.png" alt="Banque" class="thumbnail" onclick="openGallery(['Image/banque.png'])">
+                            <img src="Image/banque.png" alt="Banque" class="thumbnail" onclick="openGallery(['Image/banque.png', 'Image/banque2.png', 'Image/banque3.png', 'Image/banque4.png', 'Image/banque5.png'])">
                             <h4>Projet application Banquaire B2B</h4>
                             <p>Réalisation d'une application sous le déroulement de la méthode AGILE
                             Pour voir en détail le projet voir <a href="https://github.com/Lynox789/Banque/">ici</a></p>
-                            <button class="btn-galerie" onclick="openGallery(['Image/banque.png'])">VOIR LE PROJET</button>
+                            <button class="btn-galerie" onclick="openGallery(['Image/banque.png', 'Image/banque2.png', 'Image/banque3.png', 'Image/banque4.png', 'Image/banque5.png'])">VOIR LE PROJET</button>
                         </div>
                         
                         <div class="description-card">
@@ -297,11 +297,11 @@
                 <div class="preuves-grid">
                     <div class="projet-row">
                         <div class="preuve-card">
-                            <img src="Image/unesco.jpg" alt="Projet Unesco" class="thumbnail" onclick="openGallery(['Image/unesco.jpg'])">
+                            <img src="Image/unesco.jpg" alt="Projet Unesco" class="thumbnail" onclick="openGallery(['Image/unesco.jpg', 'Image/KyotoBienseance.png'])">
                             <h4>SAÉ : Unesco</h4>
                             <p>Réalisation d'une application de médiation culturelle et numérique
                             Pour voir en détail le projet voir <a href="https://github.com/Lynox789/Kyoto_final/">ici</a></p>
-                            <button class="btn-galerie" onclick="openGallery(['Image/unesco.jpg'])">VOIR LE PROJET</button>
+                            <button class="btn-galerie" onclick="openGallery(['Image/unesco.jpg', 'Image/KyotoBienseance.png'])">VOIR LE PROJET</button>
                         </div>
                         
                         <div class="description-card">
@@ -347,6 +347,13 @@
         let currentTranslate = 0, prevTranslate = 0;
         let animationID = 0;
 
+        lightbox.addEventListener('click', (e) => {
+            // Si on clique sur le fond noir ou la zone autour de l'image, on ferme
+            if (e.target.id === 'lightbox' || e.target.classList.contains('gallery-slide')) {
+                closeGallery();
+            }
+        });
+
         function openGallery(imagesArray) {
             currentGallery = imagesArray;
             currentIndex = 0;
@@ -358,6 +365,26 @@
                 const img = document.createElement('img');
                 img.src = src;
                 img.alt = "Image de preuve";
+                
+                // Zoom sur PC
+                img.addEventListener('dblclick', function(e) {
+                    e.stopPropagation(); // Empêche le clic de se propager au fond
+                    this.classList.toggle('zoomed');
+                });
+
+                // Zoom sur Mobile
+                let lastTap = 0;
+                img.addEventListener('touchend', function(e) {
+                    let currentTime = new Date().getTime();
+                    let tapLength = currentTime - lastTap;
+                    // Si le temps entre deux tapes est court (< 300ms), c'est un double-tap
+                    if (tapLength < 300 && tapLength > 0) {
+                        this.classList.toggle('zoomed');
+                        e.preventDefault(); // Empêche le comportement par défaut du navigateur
+                    }
+                    lastTap = currentTime;
+                });
+
                 slide.appendChild(img);
                 track.appendChild(slide);
             });
@@ -366,8 +393,12 @@
             document.body.style.overflow = 'hidden'; 
             
             track.style.transition = 'none'; 
-            currentTranslate = 0;
-            prevTranslate = 0;
+            currentTranslate = currentIndex * -window.innerWidth;
+            prevTranslate = currentTranslate;
+            
+            // Retire le zoom de toutes les images lors d'un changement de slide
+            document.querySelectorAll('.gallery-slide img').forEach(img => img.classList.remove('zoomed'));
+            
             setSliderPosition();
             updateCounter();
         }
